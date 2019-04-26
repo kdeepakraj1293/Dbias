@@ -67,19 +67,19 @@ class WordEmbedding:
                     #if(s[1] == '.'): 
                         #v = np.array(list(map(float, s[3:])))
                    # else:
-                    strt = 1
                     try:
-                        v = np.array(list(map(float, s[strt:])))
+                        v = np.array(list(map(float, s[1:])))
                     except ValueError:
-                        print ('Line is corrupt!',cnt,line)
+                        strt = 1
+                        print ('Line is corrupt!',cnt,s[strt:0])
                         for i in range(strt,len(s)):
                             strt +=1
                             try:
                                 v = np.array(list(map(float, s[strt:])))
                             except ValueError:
-                                print ('Line is still corrupt!',i,cnt,s[strt:])
+                                print ('Line is still corrupt!',strt,cnt,s[strt:])
                                 continue
-                        print('The Final s is ',s[strt:])
+                        print('The Final v is ',v)
                         
                     #Go val by val and try-except and continue
                     #v = np.array([float(x) for x in s[1:]])
