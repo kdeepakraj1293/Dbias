@@ -73,7 +73,6 @@ class WordEmbedding:
                     except ValueError:
                         print ('Line is corrupt!',cnt,line)
                         for i in range(strt,len(s)):
-                            cnt_2
                             try:
                                 v = np.array(list(map(float, s[i:])))
                             except ValueError:
