@@ -60,7 +60,9 @@ class WordEmbedding:
             words = []
 
             with open(fname, "r", encoding='utf8') as f:
+                cnt = -1
                 for line in f:
+                    cnt +=1
                     s = line.split()
                     #if(s[1] == '.'): 
                         #v = np.array(list(map(float, s[3:])))
@@ -69,14 +71,12 @@ class WordEmbedding:
                     try:
                         v = np.array(list(map(float, s[strt:])))
                     except ValueError:
-                        print ('Line is corrupt!',line,s[1:])
+                        print ('Line is corrupt!',cnt,line)
                         for i in range(strt,len(s)):
-                            strt +=1
                             try:
-                                v = np.array(list(map(float, s[strt:])))
+                                v = np.array(list(map(float, s[i:])))
                             except ValueError:
-                                print ('Line is corrupt!',line,s[strt:])
-                                strt +=1
+                                print ('Line is still corrupt!',i,cnt,s[i:])
                                 continue
                         
                     #Go val by val and try-except and continue
