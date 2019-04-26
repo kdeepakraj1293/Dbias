@@ -62,7 +62,11 @@ class WordEmbedding:
             with open(fname, "r", encoding='utf8') as f:
                 for line in f:
                     s = line.split()
-                    v = np.array(list(map(float, s[1:])))
+                    try:
+                        v = np.array(list(map(float, s[1:])))
+                    except ValueError:
+                        print ('Line {i} is corrupt!'.format(i = index)',s[1:])
+                        break
                     #v = np.array([float(x) for x in s[1:]])
                     if len(vecs) and vecs[-1].shape!=v.shape:
                         print("Got weird line", line)
