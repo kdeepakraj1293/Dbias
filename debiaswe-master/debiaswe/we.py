@@ -66,7 +66,12 @@ class WordEmbedding:
                         v = np.array(list(map(float, s[1:])))
                     except ValueError:
                         print ('Line is corrupt!',line,s[1:])
-                        break
+                        #Go val by val and try-except and continue
+                        for i in range(0,len(s)):
+                            try:
+                                v[i] = (map(float, s[i]))
+                            except ValueError:
+                                continue;  
                     #v = np.array([float(x) for x in s[1:]])
                     if len(vecs) and vecs[-1].shape!=v.shape:
                         print("Got weird line", line)
