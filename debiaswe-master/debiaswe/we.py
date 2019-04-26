@@ -70,7 +70,7 @@ class WordEmbedding:
                         v = np.array(list(map(float, s[strt:])))
                     except ValueError:
                         print ('Line is corrupt!',line,s[1:])
-                        for i in rane(strt,len(s)):
+                        for i in range(strt,len(s)):
                             strt +=1
                             try:
                                 v = np.array(list(map(float, s[strt:])))
