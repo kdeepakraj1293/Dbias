@@ -72,14 +72,14 @@ class WordEmbedding:
                         v = np.array(list(map(float, s[1:])))
                     except ValueError:
                         pass
-                        print ('Line is corrupt!',cnt,s[strt:0])
+                        #print ('Line is corrupt!',cnt,s[strt:0])
                         for i in range(strt,len(s)):
                             strt +=1
                             try:
                                 v = np.array(list(map(float, s[strt:])))
-                                print('The v is ',v)
+                                #print('The v is ',v)
                             except ValueError:
-                                print ('Line is still corrupt!',strt,cnt,s[strt:])
+                                #print ('Line is still corrupt!',strt,cnt,s[strt:])
                                 continue
                     #print('The Final v is ',v)
                         
