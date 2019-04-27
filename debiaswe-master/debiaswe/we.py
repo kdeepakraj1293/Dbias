@@ -79,7 +79,7 @@ class WordEmbedding:
                             except ValueError:
                                 print ('Line is still corrupt!',strt,cnt,s[strt:])
                                 continue
-                        print('The Final v is ',v)
+                    print('The Final v is ',v)
                         
                     #Go val by val and try-except and continue
                     #v = np.array([float(x) for x in s[1:]])
