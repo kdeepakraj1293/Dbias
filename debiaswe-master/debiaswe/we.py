@@ -86,7 +86,7 @@ class WordEmbedding:
                     #Go val by val and try-except and continue
                     #v = np.array([float(x) for x in s[1:]])
                     if len(vecs) and vecs[-1].shape!=v.shape:
-                        print("Got weird line", line)
+                        #print("Got weird line", line)
                         continue
     #                 v /= np.linalg.norm(v)
                     words.append(s[0:strt])
