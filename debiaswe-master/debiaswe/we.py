@@ -61,6 +61,7 @@ class WordEmbedding:
 
             with open(fname, "r", encoding='utf8') as f:
                 cnt = -1
+                strt = 1
                 for line in f:
                     cnt +=1
                     s = line.split()
@@ -71,7 +72,6 @@ class WordEmbedding:
                         v = np.array(list(map(float, s[1:])))
                     except ValueError:
                         pass
-                        strt = 1
                         print ('Line is corrupt!',cnt,s[strt:0])
                         for i in range(strt,len(s)):
                             strt +=1
