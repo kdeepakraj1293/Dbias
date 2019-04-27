@@ -102,7 +102,7 @@ class WordEmbedding:
     def reindex(self):
         self.index = {w: i for i, w in enumerate(self.words)}
         self.n, self.d = self.vecs.shape
-        assert self.n == len(self.words) == len(self.index)
+        #assert self.n == len(self.words) == len(self.index)
         self._neighbors = None
         print(self.n, "words of dimension", self.d, ":", ", ".join(self.words[:4] + ["..."] + self.words[-4:]))
 
